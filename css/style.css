@@ -3,14 +3,14 @@
     --primary-color: #60a5fa;
     --secondary-color: #a78bfa;
     --accent-color: #34d399;
-    --bg-dark: #0f172a;
-    --bg-darker: #020617;
-    --bg-card: #1e293b;
-    --bg-card-hover: #334155;
+    --bg-dark: #1e293b;
+    --bg-darker: #0f172a;
+    --bg-card: #334155;
+    --bg-card-hover: #475569;
     --text-primary: #f1f5f9;
     --text-secondary: #cbd5e1;
     --text-muted: #94a3b8;
-    --border-color: #334155;
+    --border-color: #475569;
     --success-color: #34d399;
     --warning-color: #fbbf24;
     --danger-color: #f87171;
@@ -50,9 +50,9 @@ section {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(15, 23, 42, 0.95);
+    background: rgba(30, 41, 59, 0.95);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     z-index: 1000;
     border-bottom: 1px solid var(--border-color);
 }
@@ -67,7 +67,7 @@ section {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
@@ -77,6 +77,15 @@ section {
     height: 45px;
     width: auto;
     object-fit: contain;
+}
+
+.logo-text {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .logo i {
@@ -135,7 +144,7 @@ section {
 /* ==================== Hero Section ==================== */
 .hero {
     margin-top: 80px;
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e293b 100%);
+    background: linear-gradient(135deg, #334155 0%, #1e293b 50%, #334155 100%);
     color: var(--text-primary);
     padding: 120px 0;
     position: relative;
@@ -266,6 +275,79 @@ section {
     color: var(--text-secondary);
 }
 
+/* ==================== Demo Video Section ==================== */
+.demo {
+    background: var(--bg-dark);
+    padding: 100px 0;
+}
+
+.video-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+}
+
+.video-container iframe,
+.video-container video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    border: none;
+}
+
+.video-container video {
+    background: #000;
+}
+
+.video-placeholder {
+    aspect-ratio: 16 / 9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-darker));
+    color: var(--text-muted);
+    padding: 40px;
+    text-align: center;
+}
+
+.video-placeholder i {
+    font-size: 5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.video-placeholder p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.video-placeholder .placeholder-hint {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+.video-placeholder code {
+    background: var(--bg-darker);
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+}
+
+/* Hide placeholder when video is present */
+.video-container video:not([src=""]) ~ .video-placeholder,
+.video-container iframe ~ .video-placeholder {
+    display: none;
+}
+
 /* ==================== About Section ==================== */
 .about {
     background: var(--bg-darker);
@@ -385,6 +467,14 @@ section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
+}
+
+/* Center the 5th scenario card */
+.scenario-card:nth-child(5) {
+    grid-column: 1 / -1;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .scenario-card {

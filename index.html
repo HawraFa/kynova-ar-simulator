@@ -16,9 +16,11 @@
             <div class="nav-wrapper">
                 <div class="logo">
                     <img src="images/logo_icon.png" alt="KyNova Logo" class="logo-image">
+                    <span class="logo-text">KyNova</span>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#demo">Demo</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#scenarios">Scenarios</a></li>
@@ -51,6 +53,24 @@
             </div>
             <div class="hero-image">
                 <img src="images/waitingScreen.png" alt="KyNova AR Training" class="hero-phone-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Video Section -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <div class="section-header">
+                <h2>See It In Action</h2>
+                <p>Watch how KyNova AR-Simulator transforms dog handler training</p>
+            </div>
+            <div class="video-container">
+                <!-- Local Video File -->
+                <video controls poster="images/waitingScreen.png">
+                    <source src="images/demo-video.mp4" type="video/mp4">
+                    <source src="images/demo-video.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </section>
@@ -487,13 +507,17 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <h3><img src="images/logo_icon.png" alt="KyNova" class="footer-logo"></h3>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1rem;">
+                        <img src="images/logo_icon.png" alt="KyNova" class="footer-logo">
+                        <span style="font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">KyNova</span>
+                    </div>
                     <p>Revolutionary AR-based dog handler training system. Senior project 2025-2026.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
+                        <li><a href="#demo">Demo</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#features">Features</a></li>
                         <li><a href="#team">Team</a></li>
