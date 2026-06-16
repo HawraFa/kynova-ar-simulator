@@ -11,59 +11,59 @@
 
 ## 👥 Team Members (6 Members)
 
-### 1. Alaa Hasan Alshehabi
+### 1. Alaa Alshehabi
 - **Student ID:** 202100334
-- **Role:** Project Lead / Backend Developer
+- **Role:** UI/UX Designer & 3D Animator
 - **Responsibilities:**
-  - AWS infrastructure management (Lambda, DynamoDB, API Gateway)
-  - Backend API development
-  - Database architecture
-  - Project coordination
+  - User interface design and prototyping
+  - User experience optimization
+  - 3D model creation and animation
+  - Visual design and branding
 
-### 2. Zahraa Fadhel A.jabbar
+### 2. Zahraa Fadhel
 - **Student ID:** 202209444
-- **Role:** AR Developer / Unity Specialist
-- **Responsibilities:**
-  - Unity AR Foundation integration
-  - AR scenario development
-  - 3D modeling and animations
-  - AR user interaction
-
-### 3. Manar Ali Jaafar
-- **Student ID:** 202208628
-- **Role:** Frontend Developer / UI/UX Designer
+- **Role:** Flutter & Unity Developer
 - **Responsibilities:**
   - Flutter mobile app development
-  - User interface design
-  - User experience optimization
-  - Multi-language support implementation
+  - Unity AR Foundation integration
+  - AR scenario development
+  - Cross-platform coordination
 
-### 4. Hawra Fadhel Ghuloom
-- **Student ID:** 202208944
-- **Role:** AI Integration / Testing Lead
+### 3. Manar Shaikh
+- **Student ID:** 202208628
+- **Role:** Flutter & AWS Developer
 - **Responsibilities:**
-  - AWS Bedrock AI integration
-  - Quiz generation system
-  - Translation review system
-  - Testing and quality assurance
-
-### 5. Alya Hasan Aldaka
-- **Student ID:** 202208622
-- **Role:** Database / Cloud Developer
-- **Responsibilities:**
-  - DynamoDB table design and optimization
-  - Cloud architecture planning
-  - Data modeling
+  - Flutter application development
+  - AWS cloud services integration
+  - Backend API integration
   - Performance optimization
 
-### 6. Khareya Husain Alhaiki
-- **Student ID:** 202208539
-- **Role:** Quality Assurance / Documentation
+### 4. Hawra Fadhel
+- **Student ID:** 202208944
+- **Role:** Flutter & AWS Developer
 - **Responsibilities:**
-  - System testing (unit, integration, user acceptance)
+  - Flutter UI/UX implementation
+  - AWS infrastructure management
+  - Lambda function development
+  - Database architecture
+
+### 5. Alya Aldaka
+- **Student ID:** 202208622
+- **Role:** Flutter & Unity Developer
+- **Responsibilities:**
+  - Flutter app features development
+  - Unity AR scene creation
+  - AR user interaction implementation
+  - Testing and debugging
+
+### 6. Khaireya Alhayki
+- **Student ID:** 202208539
+- **Role:** Flutter & Unity Developer
+- **Responsibilities:**
+  - Flutter application development
+  - Unity AR components
+  - Quality assurance and testing
   - Documentation writing
-  - Technical report preparation
-  - User manual creation
 
 ---
 
@@ -191,12 +191,12 @@ College: College of Information Technology
 Department: Computer Science
 
 Team Members:
-1. Alaa Hasan Alshehabi - ID: 202100334 - Project Lead / Backend Developer
-2. Zahraa Fadhel A.jabbar - ID: 202209444 - AR Developer / Unity Specialist
-3. Manar Ali Jaafar - ID: 202208628 - Frontend Developer / UI/UX Designer
-4. Hawra Fadhel Ghuloom - ID: 202208944 - AI Integration / Testing Lead
-5. Alya Hasan Aldaka - ID: 202208622 - Database / Cloud Developer
-6. Khareya Husain Alhaiki - ID: 202208539 - Quality Assurance / Documentation
+1. Alaa Alshehabi - ID: 202100334 - UI/UX Designer & 3D Animator
+2. Zahraa Fadhel - ID: 202209444 - Flutter & Unity Developer
+3. Manar Shaikh - ID: 202208628 - Flutter & AWS Developer
+4. Hawra Fadhel - ID: 202208944 - Flutter & AWS Developer
+5. Alya Aldaka - ID: 202208622 - Flutter & Unity Developer
+6. Khaireya Alhayki - ID: 202208539 - Flutter & Unity Developer
 
 Supervisors:
 - Dr. Abdulla Alasaadi
@@ -228,36 +228,40 @@ Technology Stack:
 
 ## 📋 Team Task Distribution for Website
 
-**Alaa (Project Lead):**
+**Alaa (UI/UX Designer & 3D Animator):**
 - [ ] Decide on hosting option (GitHub Pages vs Custom Domain)
-- [ ] Create GitHub repository (if using GitHub Pages)
-- [ ] Purchase domain (if using custom domain)
-- [ ] Coordinate team photo collection
+- [ ] Review website design and suggest improvements
+- [ ] Add team photos or professional placeholders
+- [ ] Create any additional graphics needed
 
-**Zahraa (AR Developer):**
+**Zahraa (Flutter & Unity Developer):**
 - [ ] Add screenshots/images of AR scenarios to website
 - [ ] Create demo video (optional, embed in website)
+- [ ] Test AR-related content display
 
-**Manar (Frontend/UI):**
-- [ ] Review website design
-- [ ] Suggest any UI improvements
-- [ ] Test responsive design on different devices
+**Manar (Flutter & AWS Developer):**
+- [ ] Create GitHub repository (if using GitHub Pages)
+- [ ] Setup AWS deployment if needed
+- [ ] Test website on different devices
+- [ ] Verify all links and functionality
 
-**Hawra (Testing):**
+**Hawra (Flutter & AWS Developer):**
+- [ ] Purchase domain if using custom domain
+- [ ] Setup DNS and hosting configurations
+- [ ] Coordinate cloud infrastructure
+- [ ] Test website performance
+
+**Alya (Flutter & Unity Developer):**
 - [ ] Test all website links and navigation
-- [ ] Test contact form
+- [ ] Test responsive design on multiple devices
 - [ ] Check browser compatibility
-- [ ] Test on mobile devices
+- [ ] Gather team feedback
 
-**Alya (Database/Cloud):**
-- [ ] Review hosting options
-- [ ] Assist with AWS deployment if needed
-- [ ] Setup DNS if using custom domain
-
-**Khareya (Documentation):**
+**Khaireya (Flutter & Unity Developer):**
 - [ ] Prepare submission document for supervisors
 - [ ] Create user guide for website maintenance
 - [ ] Document deployment process
+- [ ] Update contact information
 
 ---
 
@@ -278,14 +282,17 @@ Technology Stack:
 
 ## 📞 Support Contacts
 
-**For Website Technical Issues:**
-- Contact: Alaa (Project Lead) or Manar (Frontend)
+**For Website Design & UI:**
+- Contact: Alaa (UI/UX Designer)
 
-**For Deployment Help:**
-- Contact: Alaa (Project Lead) or Alya (Cloud Developer)
+**For Technical Issues & Deployment:**
+- Contact: Manar or Hawra (AWS Developers)
 
-**For Content Updates:**
-- Contact: Khareya (Documentation)
+**For Content & Documentation:**
+- Contact: Khaireya (Documentation Lead)
+
+**For AR Features & Unity:**
+- Contact: Zahraa or Alya (Unity Developers)
 
 ---
 
