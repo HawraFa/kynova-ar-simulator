@@ -141,24 +141,11 @@ section {
 /* ==================== Hero Section ==================== */
 .hero {
     margin-top: 80px;
-    background: linear-gradient(135deg, #334155 0%, #1e293b 50%, #334155 100%);
+    background: var(--bg-dark);
     color: var(--text-primary);
     padding: 120px 0;
     position: relative;
     overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(96, 165, 250, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.1) 0%, transparent 50%);
-    pointer-events: none;
 }
 
 .hero .container {
