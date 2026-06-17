@@ -160,7 +160,10 @@ section {
 .hero-title {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     animation: fadeInUp 0.8s ease;
 }
 
@@ -247,15 +250,9 @@ section {
 
 .section-header h2 {
     font-size: 2.5rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
     margin-bottom: 1rem;
     font-weight: 700;
-    display: inline-block;
-    padding: 15px 40px;
-    border-radius: 50px;
 }
 
 .section-header p {
