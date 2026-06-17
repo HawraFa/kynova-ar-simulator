@@ -921,129 +921,9 @@ section {
     }
 }
 
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-}
-
-@keyframes glow {
-    0%, 100% {
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    }
-    50% {
-        box-shadow: 0 8px 40px rgba(96, 165, 250, 0.4);
-    }
-}
-
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes rotateIn {
-    from {
-        opacity: 0;
-        transform: rotate(-180deg) scale(0);
-    }
-    to {
-        opacity: 1;
-        transform: rotate(0) scale(1);
-    }
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-30px);
-    }
-    60% {
-        transform: translateY(-15px);
-    }
-}
-
-@keyframes shake {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    10%, 30%, 50%, 70%, 90% {
-        transform: translateX(-5px);
-    }
-    20%, 40%, 60%, 80% {
-        transform: translateX(5px);
-    }
-}
-
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.3);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes flipIn {
-    from {
-        opacity: 0;
-        transform: perspective(400px) rotateY(-90deg);
-    }
-    to {
-        opacity: 1;
-        transform: perspective(400px) rotateY(0);
-    }
-}
-
-@keyframes glowPulse {
-    0%, 100% {
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        border-color: var(--border-color);
-    }
-    50% {
-        box-shadow: 0 10px 60px rgba(96, 165, 250, 0.5);
-        border-color: var(--primary-color);
-    }
-}
-
-@keyframes gradientShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Apply animations to sections */
+/* Apply simple animations */
 .stat-card {
-    animation: zoomIn 0.8s ease forwards;
+    animation: fadeInUp 0.6s ease forwards;
 }
 
 .stat-card:nth-child(1) {
@@ -1067,21 +947,21 @@ section {
 }
 
 .feature-card {
-    animation: flipIn 0.8s ease forwards;
+    animation: fadeInUp 0.6s ease forwards;
     opacity: 0;
 }
 
 .feature-card:nth-child(1) { animation-delay: 0.1s; }
-.feature-card:nth-child(2) { animation-delay: 0.15s; }
-.feature-card:nth-child(3) { animation-delay: 0.2s; }
-.feature-card:nth-child(4) { animation-delay: 0.25s; }
-.feature-card:nth-child(5) { animation-delay: 0.3s; }
-.feature-card:nth-child(6) { animation-delay: 0.35s; }
-.feature-card:nth-child(7) { animation-delay: 0.4s; }
-.feature-card:nth-child(8) { animation-delay: 0.45s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+.feature-card:nth-child(4) { animation-delay: 0.4s; }
+.feature-card:nth-child(5) { animation-delay: 0.5s; }
+.feature-card:nth-child(6) { animation-delay: 0.6s; }
+.feature-card:nth-child(7) { animation-delay: 0.7s; }
+.feature-card:nth-child(8) { animation-delay: 0.8s; }
 
 .scenario-card {
-    animation: fadeInUp 0.8s ease forwards;
+    animation: fadeInUp 0.6s ease forwards;
     opacity: 0;
 }
 
@@ -1091,12 +971,8 @@ section {
 .scenario-card:nth-child(4) { animation-delay: 0.4s; }
 .scenario-card:nth-child(5) { animation-delay: 0.5s; }
 
-.feature-icon {
-    animation: rotateIn 1s ease forwards;
-}
-
 .team-member {
-    animation: fadeInUp 0.8s ease forwards;
+    animation: fadeInUp 0.6s ease forwards;
     opacity: 0;
 }
 
@@ -1107,38 +983,8 @@ section {
 .team-member:nth-child(5) { animation-delay: 0.5s; }
 .team-member:nth-child(6) { animation-delay: 0.6s; }
 
-/* Enhanced hover animations */
-.stat-card:hover {
-    animation: bounce 0.8s ease;
-}
-
-.feature-card:hover .feature-icon {
-    animation: shake 0.6s ease, rotateIn 1s ease;
-}
-
-.btn:hover {
-    animation: pulse 0.6s ease infinite;
-}
-
 .hero-phone-image {
-    animation: float 4s ease-in-out infinite;
-}
-
-/* Continuous animations */
-.section-header h2 {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--primary-color));
-    background-size: 200% 200%;
-    animation: gradientShift 3s ease infinite;
-}
-
-/* Glow animation on scroll */
-@media (prefers-reduced-motion: no-preference) {
-    .stat-card,
-    .feature-card,
-    .scenario-card,
-    .team-member {
-        animation-play-state: running;
-    }
+    animation: float 3s ease-in-out infinite;
 }
 
 /* ==================== Responsive Design ==================== */
