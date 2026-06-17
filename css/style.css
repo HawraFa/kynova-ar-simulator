@@ -448,23 +448,6 @@ section {
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-.feature-icon::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s;
-}
-
-.feature-card:hover .feature-icon::before {
-    left: 100%;
 }
 
 .feature-icon i {
