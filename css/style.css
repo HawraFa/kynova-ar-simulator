@@ -352,6 +352,168 @@ section {
     display: none;
 }
 
+/* ==================== Dog Difficulty Levels Section ==================== */
+.dogs {
+    background: var(--bg-dark);
+    padding: 100px 0;
+}
+
+.dogs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.dog-card {
+    background: var(--bg-card);
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--border-color);
+    transition: var(--transition);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.dog-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.dog-card:hover::before {
+    transform: scaleX(1);
+}
+
+.dog-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 50px rgba(96, 165, 250, 0.3);
+    border-color: var(--primary-color);
+}
+
+.dog-card.featured {
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 30px rgba(96, 165, 250, 0.2);
+}
+
+.dog-stars {
+    font-size: 1.5rem;
+    color: var(--warning-color);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dog-stars .far {
+    opacity: 0.3;
+}
+
+.dog-icon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+.dog-icon i {
+    font-size: 3rem;
+    color: #ffffff;
+}
+
+.dog-icon::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.dog-card:hover .dog-icon::after {
+    opacity: 1;
+    animation: pulse 1.5s infinite;
+}
+
+.dog-card h3 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.dog-level {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.dog-desc {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.dog-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.dog-badge.success {
+    background: var(--success-color);
+}
+
+.dog-badge.warning {
+    background: var(--warning-color);
+}
+
+.dog-badge.danger {
+    background: var(--danger-color);
+}
+
+.dogs-note {
+    text-align: center;
+    padding: 20px;
+    background: rgba(96, 165, 250, 0.1);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.dogs-note i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.dogs-note p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
 /* ==================== About Section ==================== */
 .about {
     background: var(--bg-darker);
@@ -985,6 +1147,160 @@ section {
 
 .hero-phone-image {
     animation: float 3s ease-in-out infinite;
+}   0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes flipIn {
+    from {
+        opacity: 0;
+        transform: perspective(400px) rotateY(-90deg);
+    }
+    to {
+        opacity: 1;
+        transform: perspective(400px) rotateY(0);
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        border-color: var(--border-color);
+    }
+    50% {
+        box-shadow: 0 10px 60px rgba(96, 165, 250, 0.5);
+        border-color: var(--primary-color);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Apply animations to sections */
+.stat-card {
+    animation: zoomIn 0.8s ease forwards;
+}
+
+.stat-card:nth-child(1) {
+    animation-delay: 0.1s;
+    opacity: 0;
+}
+
+.stat-card:nth-child(2) {
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.stat-card:nth-child(3) {
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+.stat-card:nth-child(4) {
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+
+.feature-card {
+    animation: flipIn 0.8s ease forwards;
+    opacity: 0;
+}
+
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.15s; }
+.feature-card:nth-child(3) { animation-delay: 0.2s; }
+.feature-card:nth-child(4) { animation-delay: 0.25s; }
+.feature-card:nth-child(5) { animation-delay: 0.3s; }
+.feature-card:nth-child(6) { animation-delay: 0.35s; }
+.feature-card:nth-child(7) { animation-delay: 0.4s; }
+.feature-card:nth-child(8) { animation-delay: 0.45s; }
+
+.scenario-card {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.scenario-card:nth-child(1) { animation-delay: 0.1s; }
+.scenario-card:nth-child(2) { animation-delay: 0.2s; }
+.scenario-card:nth-child(3) { animation-delay: 0.3s; }
+.scenario-card:nth-child(4) { animation-delay: 0.4s; }
+.scenario-card:nth-child(5) { animation-delay: 0.5s; }
+
+.feature-icon {
+    animation: rotateIn 1s ease forwards;
+}
+
+.team-member {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.team-member:nth-child(1) { animation-delay: 0.1s; }
+.team-member:nth-child(2) { animation-delay: 0.2s; }
+.team-member:nth-child(3) { animation-delay: 0.3s; }
+.team-member:nth-child(4) { animation-delay: 0.4s; }
+.team-member:nth-child(5) { animation-delay: 0.5s; }
+.team-member:nth-child(6) { animation-delay: 0.6s; }
+
+/* Enhanced hover animations */
+.stat-card:hover {
+    animation: bounce 0.8s ease;
+}
+
+.feature-card:hover .feature-icon {
+    animation: shake 0.6s ease, rotateIn 1s ease;
+}
+
+.btn:hover {
+    animation: pulse 0.6s ease infinite;
+}
+
+.hero-phone-image {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Continuous animations */
+.section-header h2 {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+}
+
+/* Glow animation on scroll */
+@media (prefers-reduced-motion: no-preference) {
+    .stat-card,
+    .feature-card,
+    .scenario-card,
+    .team-member {
+        animation-play-state: running;
+    }
 }
 
 /* ==================== Responsive Design ==================== */
@@ -998,6 +1314,10 @@ section {
     }
     
     .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .dogs-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -1063,6 +1383,10 @@ section {
     }
     
     .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dogs-grid {
         grid-template-columns: 1fr;
     }
     
