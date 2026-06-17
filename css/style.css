@@ -352,168 +352,6 @@ section {
     display: none;
 }
 
-/* ==================== Dog Difficulty Levels Section ==================== */
-.dogs {
-    background: var(--bg-dark);
-    padding: 100px 0;
-}
-
-.dogs-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.dog-card {
-    background: var(--bg-card);
-    padding: 40px 30px;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    border: 2px solid var(--border-color);
-    transition: var(--transition);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.dog-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-.dog-card:hover::before {
-    transform: scaleX(1);
-}
-
-.dog-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 50px rgba(96, 165, 250, 0.3);
-    border-color: var(--primary-color);
-}
-
-.dog-card.featured {
-    border-color: var(--primary-color);
-    box-shadow: 0 8px 30px rgba(96, 165, 250, 0.2);
-}
-
-.dog-stars {
-    font-size: 1.5rem;
-    color: var(--warning-color);
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-}
-
-.dog-stars .far {
-    opacity: 0.3;
-}
-
-.dog-icon {
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    position: relative;
-}
-
-.dog-icon i {
-    font-size: 3rem;
-    color: #ffffff;
-}
-
-.dog-icon::after {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    border-radius: 50%;
-    border: 2px solid var(--primary-color);
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.dog-card:hover .dog-icon::after {
-    opacity: 1;
-    animation: pulse 1.5s infinite;
-}
-
-.dog-card h3 {
-    font-size: 1.8rem;
-    color: var(--text-primary);
-    margin-bottom: 10px;
-}
-
-.dog-level {
-    font-size: 1.1rem;
-    color: var(--primary-color);
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-.dog-desc {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.dog-badge {
-    display: inline-block;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #ffffff;
-}
-
-.dog-badge.success {
-    background: var(--success-color);
-}
-
-.dog-badge.warning {
-    background: var(--warning-color);
-}
-
-.dog-badge.danger {
-    background: var(--danger-color);
-}
-
-.dogs-note {
-    text-align: center;
-    padding: 20px;
-    background: rgba(96, 165, 250, 0.1);
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-.dogs-note i {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-}
-
-.dogs-note p {
-    color: var(--text-secondary);
-    margin: 0;
-}
-
 /* ==================== About Section ==================== */
 .about {
     background: var(--bg-darker);
@@ -1316,10 +1154,6 @@ section {
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
-    .dogs-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 @media (max-width: 768px) {
@@ -1383,10 +1217,6 @@ section {
     }
     
     .team-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .dogs-grid {
         grid-template-columns: 1fr;
     }
     
