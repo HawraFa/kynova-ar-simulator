@@ -509,6 +509,7 @@ section {
     position: relative;
     transition: var(--transition);
     border: 1px solid var(--border-color);
+    text-align: center;
 }
 
 .scenario-card:hover {
@@ -543,7 +544,6 @@ section {
 .scenario-card h3 {
     color: var(--text-primary);
     margin-bottom: 1rem;
-    padding-right: 80px;
 }
 
 .scenario-xp {
@@ -564,6 +564,8 @@ section {
 
 .scenario-features {
     list-style: none;
+    display: inline-block;
+    text-align: left;
 }
 
 .scenario-features li {
@@ -580,50 +582,6 @@ section {
 
 .scenario-features .fa-times {
     color: var(--danger-color);
-}
-
-/* Dog Difficulty Levels */
-.dog-levels {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border-color);
-}
-
-.dog-levels-title {
-    color: var(--primary-color);
-    font-weight: 600;
-    margin-bottom: 12px;
-    font-size: 0.95rem;
-}
-
-.dog-levels-title i {
-    margin-right: 8px;
-}
-
-.dog-level {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 8px;
-    padding: 8px 12px;
-    background: rgba(96, 165, 250, 0.05);
-    border-radius: 8px;
-    transition: var(--transition);
-}
-
-.dog-level:hover {
-    background: rgba(96, 165, 250, 0.1);
-    transform: translateX(5px);
-}
-
-.dog-level .stars {
-    font-size: 1.1rem;
-    min-width: 60px;
-}
-
-.dog-level span:last-child {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
 }
 
 /* ==================== Technology Section ==================== */
@@ -1014,9 +972,78 @@ section {
     }
 }
 
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes flipIn {
+    from {
+        opacity: 0;
+        transform: perspective(400px) rotateY(-90deg);
+    }
+    to {
+        opacity: 1;
+        transform: perspective(400px) rotateY(0);
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        border-color: var(--border-color);
+    }
+    50% {
+        box-shadow: 0 10px 60px rgba(96, 165, 250, 0.5);
+        border-color: var(--primary-color);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 /* Apply animations to sections */
 .stat-card {
-    animation: fadeInUp 0.6s ease forwards;
+    animation: zoomIn 0.8s ease forwards;
 }
 
 .stat-card:nth-child(1) {
@@ -1040,21 +1067,21 @@ section {
 }
 
 .feature-card {
-    animation: fadeInUp 0.6s ease forwards;
+    animation: flipIn 0.8s ease forwards;
     opacity: 0;
 }
 
 .feature-card:nth-child(1) { animation-delay: 0.1s; }
-.feature-card:nth-child(2) { animation-delay: 0.2s; }
-.feature-card:nth-child(3) { animation-delay: 0.3s; }
-.feature-card:nth-child(4) { animation-delay: 0.4s; }
-.feature-card:nth-child(5) { animation-delay: 0.5s; }
-.feature-card:nth-child(6) { animation-delay: 0.6s; }
-.feature-card:nth-child(7) { animation-delay: 0.7s; }
-.feature-card:nth-child(8) { animation-delay: 0.8s; }
+.feature-card:nth-child(2) { animation-delay: 0.15s; }
+.feature-card:nth-child(3) { animation-delay: 0.2s; }
+.feature-card:nth-child(4) { animation-delay: 0.25s; }
+.feature-card:nth-child(5) { animation-delay: 0.3s; }
+.feature-card:nth-child(6) { animation-delay: 0.35s; }
+.feature-card:nth-child(7) { animation-delay: 0.4s; }
+.feature-card:nth-child(8) { animation-delay: 0.45s; }
 
 .scenario-card {
-    animation: fadeInUp 0.6s ease forwards;
+    animation: fadeInUp 0.8s ease forwards;
     opacity: 0;
 }
 
@@ -1065,11 +1092,11 @@ section {
 .scenario-card:nth-child(5) { animation-delay: 0.5s; }
 
 .feature-icon {
-    animation: rotateIn 0.8s ease forwards;
+    animation: rotateIn 1s ease forwards;
 }
 
 .team-member {
-    animation: fadeInUp 0.6s ease forwards;
+    animation: fadeInUp 0.8s ease forwards;
     opacity: 0;
 }
 
@@ -1080,17 +1107,38 @@ section {
 .team-member:nth-child(5) { animation-delay: 0.5s; }
 .team-member:nth-child(6) { animation-delay: 0.6s; }
 
-/* Hover animations */
+/* Enhanced hover animations */
 .stat-card:hover {
-    animation: pulse 0.6s ease;
+    animation: bounce 0.8s ease;
 }
 
-.feature-icon:hover {
-    animation: pulse 0.6s ease;
+.feature-card:hover .feature-icon {
+    animation: shake 0.6s ease, rotateIn 1s ease;
 }
 
 .btn:hover {
-    animation: pulse 0.6s ease;
+    animation: pulse 0.6s ease infinite;
+}
+
+.hero-phone-image {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Continuous animations */
+.section-header h2 {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+}
+
+/* Glow animation on scroll */
+@media (prefers-reduced-motion: no-preference) {
+    .stat-card,
+    .feature-card,
+    .scenario-card,
+    .team-member {
+        animation-play-state: running;
+    }
 }
 
 /* ==================== Responsive Design ==================== */
