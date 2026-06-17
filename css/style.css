@@ -266,8 +266,12 @@ section {
 
 .section-header h2 {
     font-size: 2.5rem;
-    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 1rem;
+    font-weight: 700;
 }
 
 .section-header p {
@@ -388,14 +392,17 @@ section {
 }
 
 .stat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(96, 165, 250, 0.2);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 50px rgba(96, 165, 250, 0.3);
     border-color: var(--primary-color);
 }
 
 .stat-card i {
     font-size: 3rem;
-    color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 1rem;
 }
 
@@ -427,8 +434,8 @@ section {
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(96, 165, 250, 0.2);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 50px rgba(96, 165, 250, 0.3);
     border-color: var(--primary-color);
 }
 
@@ -441,6 +448,23 @@ section {
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.feature-card:hover .feature-icon::before {
+    left: 100%;
 }
 
 .feature-icon i {
@@ -488,8 +512,8 @@ section {
 }
 
 .scenario-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(96, 165, 250, 0.2);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 50px rgba(96, 165, 250, 0.3);
     border-color: var(--primary-color);
 }
 
@@ -552,6 +576,54 @@ section {
 
 .scenario-features i {
     color: var(--success-color);
+}
+
+.scenario-features .fa-times {
+    color: var(--danger-color);
+}
+
+/* Dog Difficulty Levels */
+.dog-levels {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.dog-levels-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.dog-levels-title i {
+    margin-right: 8px;
+}
+
+.dog-level {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    background: rgba(96, 165, 250, 0.05);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.dog-level:hover {
+    background: rgba(96, 165, 250, 0.1);
+    transform: translateX(5px);
+}
+
+.dog-level .stars {
+    font-size: 1.1rem;
+    min-width: 60px;
+}
+
+.dog-level span:last-child {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
 /* ==================== Technology Section ==================== */
@@ -643,8 +715,8 @@ section {
 }
 
 .team-member:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(96, 165, 250, 0.2);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 50px rgba(96, 165, 250, 0.3);
     border-color: var(--primary-color);
 }
 
@@ -889,6 +961,136 @@ section {
     50% {
         transform: translateY(-20px);
     }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 8px 40px rgba(96, 165, 250, 0.4);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes rotateIn {
+    from {
+        opacity: 0;
+        transform: rotate(-180deg) scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0) scale(1);
+    }
+}
+
+/* Apply animations to sections */
+.stat-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.stat-card:nth-child(1) {
+    animation-delay: 0.1s;
+    opacity: 0;
+}
+
+.stat-card:nth-child(2) {
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.stat-card:nth-child(3) {
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+.stat-card:nth-child(4) {
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+
+.feature-card {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+.feature-card:nth-child(4) { animation-delay: 0.4s; }
+.feature-card:nth-child(5) { animation-delay: 0.5s; }
+.feature-card:nth-child(6) { animation-delay: 0.6s; }
+.feature-card:nth-child(7) { animation-delay: 0.7s; }
+.feature-card:nth-child(8) { animation-delay: 0.8s; }
+
+.scenario-card {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.scenario-card:nth-child(1) { animation-delay: 0.1s; }
+.scenario-card:nth-child(2) { animation-delay: 0.2s; }
+.scenario-card:nth-child(3) { animation-delay: 0.3s; }
+.scenario-card:nth-child(4) { animation-delay: 0.4s; }
+.scenario-card:nth-child(5) { animation-delay: 0.5s; }
+
+.feature-icon {
+    animation: rotateIn 0.8s ease forwards;
+}
+
+.team-member {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.team-member:nth-child(1) { animation-delay: 0.1s; }
+.team-member:nth-child(2) { animation-delay: 0.2s; }
+.team-member:nth-child(3) { animation-delay: 0.3s; }
+.team-member:nth-child(4) { animation-delay: 0.4s; }
+.team-member:nth-child(5) { animation-delay: 0.5s; }
+.team-member:nth-child(6) { animation-delay: 0.6s; }
+
+/* Hover animations */
+.stat-card:hover {
+    animation: pulse 0.6s ease;
+}
+
+.feature-icon:hover {
+    animation: pulse 0.6s ease;
+}
+
+.btn:hover {
+    animation: pulse 0.6s ease;
 }
 
 /* ==================== Responsive Design ==================== */
