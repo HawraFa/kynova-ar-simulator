@@ -1085,13 +1085,6 @@ section {
     animation: float 4s ease-in-out infinite;
 }
 
-/* Continuous animations */
-.section-header h2 {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--primary-color));
-    background-size: 200% 200%;
-    animation: gradientShift 3s ease infinite;
-}
-
 /* Glow animation on scroll */
 @media (prefers-reduced-motion: no-preference) {
     .stat-card,
