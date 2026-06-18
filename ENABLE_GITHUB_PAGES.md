@@ -55,7 +55,7 @@ After enabling GitHub Pages, verify:
 - [ ] All sections visible (Home, About, Features, Scenarios, Team, Contact)
 - [ ] Navigation works smoothly
 - [ ] Team section shows all 6 members correctly
-- [ ] Supervisors shown: Dr. Abdulla Alasaadi & Dr. Hadeel Alobaidy
+- [ ] Supervisors shown: Dr. Abdulla Alasaadi & Dr. Nabeel Hewahi
 - [ ] University of Bahrain displayed correctly
 - [ ] Contact form works
 - [ ] Test on mobile device (responsive design)
@@ -87,12 +87,12 @@ Before submitting to supervisors, update the contact email:
 
 ## 📋 SUBMISSION TO SUPERVISORS
 
-Use this format to submit to Dr. Abdulla Alasaadi and Dr. Hadeel Alobaidy:
+Use this format to submit to Dr. Abdulla Alasaadi and Dr. Nabeel Hewahi:
 
 ```
 Subject: Senior Project Website - KyNova AR-Simulator
 
-Dear Dr. Abdulla Alasaadi and Dr. Hadeel Alobaidy,
+Dear Dr. Abdulla Alasaadi and Dr. Nabeel Hewahi,
 
 We are pleased to submit our senior project website for KyNova AR-Simulator.
 

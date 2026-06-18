@@ -21,7 +21,7 @@ Team Members (6):
 
 Supervisors:
 - Dr. Abdulla Alasaadi
-- Dr. Hadeel Alobaidy
+- Dr. Nabeel Hewahi
 
 University: University of Bahrain
 College: College of Information Technology
@@ -98,7 +98,7 @@ DEPLOYMENT:
 
 SUBMISSION:
 [ ] Fill submission format from TEAM_INFO.md
-[ ] Submit to Dr. Abdulla Alasaadi & Dr. Hadeel Alobaidy
+[ ] Submit to Dr. Abdulla Alasaadi & Dr. Nabeel Hewahi
 [ ] Add website link to project presentation
 
 ═══════════════════════════════════════════════════════════════════

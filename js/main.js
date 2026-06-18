@@ -1,189 +1,274 @@
-// ==================== Mobile Navigation ==================== 
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+/* ================================================================
+   Navbar: scroll state + active link tracking
+================================================================ */
+const navbar  = document.getElementById('navbar');
+const navMenu = document.getElementById('navMenu');
+const hamburger = document.getElementById('hamburger');
 
 hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
 });
 
-// Close mobile menu when clicking on a nav link
-document.querySelectorAll('.nav-menu a').forEach(link => {
+document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+        document.body.style.overflow = '';
     });
 });
 
-// ==================== Smooth Scroll & Active Nav ==================== 
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.nav-menu a');
+/* ================================================================
+   Scroll Progress Bar + Navbar glass effect + Active link
+================================================================ */
+const scrollProgress = document.getElementById('scrollProgress');
+const scrollTopBtn   = document.getElementById('scrollTopBtn');
+const sections       = document.querySelectorAll('section[id]');
+const navLinks       = document.querySelectorAll('.nav-link');
 
-window.addEventListener('scroll', () => {
+function onScroll() {
+    const scrollY   = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress  = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+
+    scrollProgress.style.width = progress + '%';
+
+    // Navbar glass on scroll
+    if (scrollY > 40) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+
+    // Scroll-to-top button
+    if (scrollY > 400) {
+        scrollTopBtn.classList.add('visible');
+    } else {
+        scrollTopBtn.classList.remove('visible');
+    }
+
+    // Active nav link
     let current = '';
-    
     sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        if (pageYOffset >= (sectionTop - 100)) {
+        if (scrollY >= section.offsetTop - 120) {
             current = section.getAttribute('id');
         }
     });
-    
+
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
+        if (link.getAttribute('href') === '#' + current) {
             link.classList.add('active');
         }
     });
-    
-    // Add shadow to navbar on scroll
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.15)';
-    } else {
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    }
+}
+
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+/* ================================================================
+   Scroll to Top
+================================================================ */
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// ==================== Contact Form Handling ==================== 
-const contactForm = document.getElementById('contactForm');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form values
-    const name = contactForm.querySelector('input[type="text"]').value;
-    const email = contactForm.querySelector('input[type="email"]').value;
-    const message = contactForm.querySelector('textarea').value;
-    
-    // Basic validation
-    if (!name || !email || !message) {
-        alert('Please fill in all fields');
-        return;
-    }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address');
-        return;
-    }
-    
-    // Simulate form submission (replace with actual backend call)
-    alert(`Thank you ${name}! Your message has been sent successfully. We'll get back to you at ${email} soon.`);
-    
-    // Reset form
-    contactForm.reset();
-    
-    // In production, you would send this data to your backend:
-    // fetch('https://your-api-endpoint.com/contact', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify({ name, email, message })
-    // })
-    // .then(response => response.json())
-    // .then(data => {
-    //     alert('Message sent successfully!');
-    //     contactForm.reset();
-    // })
-    // .catch(error => {
-    //     alert('Error sending message. Please try again.');
-    // });
-});
-
-// ==================== Intersection Observer for Animations ==================== 
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
+/* ================================================================
+   Intersection Observer — Scroll-triggered animations
+================================================================ */
+const animationObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('visible');
+            animationObserver.unobserve(entry.target);
         }
     });
-}, observerOptions);
-
-// Observe all cards and sections for fade-in effect
-document.querySelectorAll('.feature-card, .scenario-card, .stat-card, .team-member, .tech-category').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
+}, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -60px 0px'
 });
 
-// ==================== Scroll to Top Button ==================== 
-const scrollTopBtn = document.createElement('button');
-scrollTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
-scrollTopBtn.className = 'scroll-top-btn';
-scrollTopBtn.style.cssText = `
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.2rem;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    z-index: 999;
-`;
+document.querySelectorAll(
+    '.reveal-up, .reveal-left, .reveal-right, .slide-left, .slide-right'
+).forEach(el => animationObserver.observe(el));
 
-document.body.appendChild(scrollTopBtn);
+/* ================================================================
+   Counter Animation for Stats
+================================================================ */
+function animateCounter(el, target, duration = 1200) {
+    let start = 0;
+    const step = Math.ceil(target / (duration / 16));
+    const timer = setInterval(() => {
+        start += step;
+        if (start >= target) {
+            el.textContent = target;
+            clearInterval(timer);
+        } else {
+            el.textContent = start;
+        }
+    }, 16);
+}
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        scrollTopBtn.style.display = 'flex';
-    } else {
-        scrollTopBtn.style.display = 'none';
-    }
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const el     = entry.target.querySelector('.stat-number');
+            const target = parseInt(el.getAttribute('data-target'), 10);
+            animateCounter(el, target);
+            counterObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat-card[data-count]').forEach(card => {
+    counterObserver.observe(card);
 });
 
-scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+/* ================================================================
+   Contact Form
+================================================================ */
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name    = document.getElementById('contactName').value.trim();
+        const email   = document.getElementById('contactEmail').value.trim();
+        const message = document.getElementById('contactMessage').value.trim();
+
+        if (!name || !email || !message) {
+            showToast('Please fill in all fields.', 'error');
+            return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showToast('Please enter a valid email address.', 'error');
+            return;
+        }
+
+        showToast(`Thank you ${name}! We'll be in touch at ${email} soon.`, 'success');
+        contactForm.reset();
+    });
+}
+
+function showToast(message, type = 'success') {
+    const existing = document.querySelector('.toast');
+    if (existing) existing.remove();
+
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.style.cssText = `
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
+        background: ${type === 'success' ? 'linear-gradient(135deg, #4f9eff, #8b5cf6)' : '#f87171'};
+        color: #fff;
+        padding: 14px 28px;
+        border-radius: 100px;
+        font-family: inherit;
+        font-size: 0.9rem;
+        font-weight: 600;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        z-index: 9999;
+        opacity: 0;
+        transition: all 0.4s ease;
+        white-space: nowrap;
+        max-width: 90vw;
+    `;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+
+    requestAnimationFrame(() => {
+        toast.style.opacity = '1';
+        toast.style.transform = 'translateX(-50%) translateY(0)';
+    });
+
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(-50%) translateY(20px)';
+        setTimeout(() => toast.remove(), 400);
+    }, 4000);
+}
+
+/* ================================================================
+   Footer Year
+================================================================ */
+const yearEl = document.getElementById('footerYear');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+/* ================================================================
+   Page load fade-in
+================================================================ */
+window.addEventListener('load', () => {
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.5s ease';
+    requestAnimationFrame(() => {
+        document.body.style.opacity = '1';
     });
 });
 
-scrollTopBtn.addEventListener('mouseenter', () => {
-    scrollTopBtn.style.transform = 'scale(1.1)';
-});
+/* ================================================================
+   Features Marquee — JS-driven loop + arrow controls
+================================================================ */
+(function () {
+    const track = document.querySelector('.features-marquee-track');
+    if (!track) return;
 
-scrollTopBtn.addEventListener('mouseleave', () => {
-    scrollTopBtn.style.transform = 'scale(1)';
-});
+    track.style.animation = 'none';
 
-// ==================== Dynamic Year in Footer ==================== 
-document.addEventListener('DOMContentLoaded', () => {
-    const footerYear = document.querySelector('.footer-bottom p');
-    if (footerYear) {
-        footerYear.innerHTML = footerYear.innerHTML.replace('2026', new Date().getFullYear());
+    const speed = 0.5; // px per frame at 60fps
+    const cardWidth = 310; // 290px card + 20px gap
+    let pos = 0;
+    let nudge = 0;
+    let paused = false;
+    let groupWidth = 0;
+
+    function measureGroup() {
+        const g = track.querySelector('.marquee-group');
+        groupWidth = g ? g.offsetWidth + 20 : 2480;
     }
-});
+    measureGroup();
+    window.addEventListener('resize', measureGroup);
 
-// ==================== Loading Animation ==================== 
-window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 0.5s ease';
-        document.body.style.opacity = '1';
-    }, 100);
-});
+    track.addEventListener('mouseenter', () => { paused = true; });
+    track.addEventListener('mouseleave', () => { paused = false; });
 
-// ==================== Console Easter Egg ==================== 
-console.log('%cKyNova AR-Simulator', 'font-size: 24px; font-weight: bold; color: #2563eb;');
-console.log('%cSenior Project 2025-2026', 'font-size: 14px; color: #7c3aed;');
-console.log('%cBuilt with ❤️ using Flutter, Unity AR, and AWS', 'font-size: 12px; color: #334155;');
-console.log('%c🐕 Training the future, one AR session at a time!', 'font-size: 12px; color: #10b981;');
+    document.querySelector('.marquee-prev')?.addEventListener('click', () => { nudge -= cardWidth; });
+    document.querySelector('.marquee-next')?.addEventListener('click', () => { nudge += cardWidth; });
+
+    let last = null;
+    function tick(ts) {
+        if (last !== null) {
+            const dt = ts - last;
+            const factor = dt / 16.67;
+
+            if (!paused) pos += speed * factor;
+
+            if (Math.abs(nudge) > 0.1) {
+                const step = nudge * 0.14 * factor;
+                pos += step;
+                nudge -= step;
+            } else {
+                nudge = 0;
+            }
+
+            if (pos >= groupWidth) pos -= groupWidth;
+            if (pos < 0) pos += groupWidth;
+
+            track.style.transform = `translateX(-${pos}px)`;
+        }
+        last = ts;
+        requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+}());
+
+/* ================================================================
+   Console Easter Egg
+================================================================ */
+console.log('%cKyNova AR-Simulator', 'font-size:22px;font-weight:900;background:linear-gradient(135deg,#4f9eff,#8b5cf6);-webkit-background-clip:text;color:transparent;');
+console.log('%cSenior Project 2025–2026 · University of Bahrain', 'font-size:12px;color:#8899b5;');
+console.log('%c🐕 Training the future, one AR session at a time!', 'font-size:12px;color:#00d4aa;');

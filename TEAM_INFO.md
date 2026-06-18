@@ -74,7 +74,7 @@
 - College of Information Technology
 - University of Bahrain
 
-**Dr. Hadeel Alobaidy**
+**Dr. Nabeel Hewahi**
 - Department of Computer Science
 - College of Information Technology
 - University of Bahrain
@@ -200,7 +200,7 @@ Team Members:
 
 Supervisors:
 - Dr. Abdulla Alasaadi
-- Dr. Hadeel Alobaidy
+- Dr. Nabeel Hewahi
 
 Website Information:
 - URL: [Your deployed website URL]

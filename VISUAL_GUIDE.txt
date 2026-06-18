@@ -82,7 +82,7 @@ https://hawrafa.github.io/kynova-ar-simulator/
 
 Share this URL with:
 → Dr. Abdulla Alasaadi (Supervisor)
-→ Dr. Hadeel Alobaidy (Supervisor)
+→ Dr. Nabeel Hewahi (Supervisor)
 → All 6 team members
 → Include in project presentation
 → Include in final report
@@ -123,10 +123,10 @@ METHOD 2: Update Locally
    📋 SUBMISSION EMAIL TO SUPERVISORS
 ═══════════════════════════════════════════════════════════════════
 
-TO: Dr. Abdulla Alasaadi, Dr. Hadeel Alobaidy
+TO: Dr. Abdulla Alasaadi, Dr. Nabeel Hewahi
 SUBJECT: Senior Project Website - KyNova AR-Simulator
 
-Dear Dr. Abdulla Alasaadi and Dr. Hadeel Alobaidy,
+Dear Dr. Abdulla Alasaadi and Dr. Nabeel Hewahi,
 
 We are pleased to submit our senior project website.
 

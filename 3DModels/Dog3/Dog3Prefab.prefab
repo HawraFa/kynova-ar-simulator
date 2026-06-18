@@ -1,0 +1,337 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &960391864458829865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4558724441554431156}
+  m_Layer: 0
+  m_Name: MouthAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4558724441554431156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960391864458829865}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.376946, y: -0.39462999, z: -0.81799066, w: -0.1818523}
+  m_LocalPosition: {x: -0, y: 0.164, z: 0.055}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6406486446198704843}
+  m_LocalEulerAnglesHint: {x: 0, y: -49.482, z: 0}
+--- !u!1001 &7315284554682402618
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6e592987bbbbe46008ac373747bc070b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 702.5078
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6e592987bbbbe46008ac373747bc070b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 193.46922
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6e592987bbbbe46008ac373747bc070b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.14400285
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6e592987bbbbe46008ac373747bc070b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.23953041
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6e592987bbbbe46008ac373747bc070b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6e592987bbbbe46008ac373747bc070b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9708889
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6e592987bbbbe46008ac373747bc070b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6e592987bbbbe46008ac373747bc070b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6e592987bbbbe46008ac373747bc070b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 207.718
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6e592987bbbbe46008ac373747bc070b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -705112755151307923, guid: 6e592987bbbbe46008ac373747bc070b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 80dd23f67080c46c4a4ccd2fda6d5b54, type: 2}
+    - target: {fileID: 919132149155446097, guid: 6e592987bbbbe46008ac373747bc070b, type: 3}
+      propertyPath: m_Name
+      value: Dog3Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 6e592987bbbbe46008ac373747bc070b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 85b7502e47f4e4cf59ac38e0c5a45cdc, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -4797048347100164623, guid: 6e592987bbbbe46008ac373747bc070b, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 4558724441554431156}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e592987bbbbe46008ac373747bc070b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8878922003283771097}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e592987bbbbe46008ac373747bc070b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8878922003283771098}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e592987bbbbe46008ac373747bc070b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7822203495157006824}
+  m_SourcePrefab: {fileID: 100100000, guid: 6e592987bbbbe46008ac373747bc070b, type: 3}
+--- !u!4 &6406486446198704843 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4797048347100164623, guid: 6e592987bbbbe46008ac373747bc070b, type: 3}
+  m_PrefabInstance: {fileID: 7315284554682402618}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7585316704032537195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e592987bbbbe46008ac373747bc070b, type: 3}
+  m_PrefabInstance: {fileID: 7315284554682402618}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8878922003283771097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7585316704032537195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add572041ecfc4fd492536ff750140c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DogController
+  idleStateName: Standing
+  walkStartStateName: Walk
+  walkSlowStateName: Walk
+  walkStateName: Walk
+  walkTurnLeftStateName: Walk
+  walkTurnRightStateName: Walk
+  walkBackwardStateName: Walk_Backward
+  walkBackwardLeftStateName: Walk_Backward_Left
+  walkBackwardRightStateName: Walk_Backward_Right
+  turnLeftStateName: TurnLeft
+  turnRightStateName: TurnRight
+  runStateName: Run
+  sprintStateName: Run
+  standToSitTriggerName: StandToSitting
+  standToSitStateName: StandToSitting
+  sittingStateName: Sitting
+  sitting2StateName: Sitting
+  sitting3StateName: Sitting
+  sittingToStandTriggerName: SittingToStand
+  sittingToStandStateName: SittingToStand
+  standToLyingTriggerName: StandToLying
+  standToLyingStateName: StandToLying
+  lyingStateName: Lying
+  lying2StateName: Lying
+  lying3StateName: Lying
+  lyingToStandTriggerName: LyingToStand
+  lyingToStandStateName: LyingToStand
+  neutralStandStateName: Standing
+  sitStateName: Sit
+  barkStateName: Bark
+  stopStateName: Stop
+  downStateName: Down
+  frontStateName: Front
+  heelStateName: Heel
+  alertStateName: Alert
+  sniffP1StateName: Sniff
+  sniffP2StateName: Sniff
+  trotStateName: Trot
+  pickupStateName: PickUp
+  pickupGrabP1StateName: PickUp
+  pickupGrabP2StateName: PickUp
+  placeStateName: PickUp
+  animationCrossFadeDuration: 0.15
+  walkMovementStartDelay: 0.05
+  walkAccelerationDuration: 0.45
+  walkTurnSwitchInterval: 0.6
+  walkLeanAngleThreshold: 15
+  gaitChangeCrossFadeDuration: 0.1
+  gaitAccelerationDuration: 0.3
+  ambientDistractionsEnabled: 1
+  ambientMinDelay: 5
+  ambientMaxDelay: 12
+  standingIdleMinDelay: 2
+  standingIdleMaxDelay: 5
+  ambientLoopDuration: {x: 3, y: 7}
+  quickLoopDuration: {x: 1.2, y: 2.2}
+  standingIdleStates:
+  - Idle_1
+  - Idle_2
+  - Idle_3
+  - Idle_4
+  - Idle_6
+  - Idle_7
+  scratchingStateName: Scratching
+  idle5StartStateName: Idle_5_start
+  idle5LoopStateName: Idle_5_loop
+  idle5EndStateName: Idle_5_end
+  diggingStartStateName: Digging_start
+  diggingLoopStateName: Digging_loop
+  diggingEndStateName: Digging_end
+  crouchIdleStartStateName: Crouch_Idle_start
+  crouchIdleLoop1StateName: Crouch_Idle_loop_1
+  crouchIdleLoop2StateName: Crouch_Idle_loop_2
+  crouchIdleEndStateName: Crouch_Idle_end
+  sleepStartStateName: Lie_Sleep_start
+  sleepLoopStateName: Lie_Sleep_loop
+  sleepEndStateName: Lie_Sleep_end
+  eatStartStateName: StandToEat
+  eatLoopStateName: Eat
+  eatEndStateName: EatToStand
+  barkClip: {fileID: 0}
+--- !u!114 &8878922003283771098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7585316704032537195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60eb3304eb674fdba88da076f5f49903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DogProfile
+  stars: 1
+  minStars: 1
+  maxStars: 5
+  canLoseStars: 1
+  starsDriveDifficulty: 1
+  disobeyChanceAtWorstStars: 0.6
+  disobeyChanceAtBestStars: 0
+  disobeyChance: 0.5
+  wrongCommandChance: 0.35
+  wrongObjectStarsThreshold: 3
+  wrongObjectChanceAtWorstStars: 0.5
+  wrongObjectChanceAtBestStars: 0.15
+  wrongObjectChance: 0
+  forceIgnoreAfterObeyStreak: 6
+  maxIgnoreStreak: 2
+--- !u!82 &-7822203495157006824
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7585316704032537195}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.7
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
