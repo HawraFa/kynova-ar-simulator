@@ -1797,6 +1797,27 @@ section { padding: 100px 0; }
     max-width: 300px;
 }
 
+.footer-partner-logos {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.partner-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.85;
+    transition: var(--transition);
+    filter: grayscale(0%);
+}
+
+.partner-logo:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
 .footer-links h4,
 .footer-contact h4 {
     font-size: 0.8rem;
