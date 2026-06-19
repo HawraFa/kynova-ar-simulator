@@ -716,7 +716,7 @@
                         <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
                         <div>
                             <h4>Email</h4>
-                            <p>info@kynova-ar.com</p>
+                            <p>info@kynova.it.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -735,18 +735,18 @@
                     </div>
                 </div>
                 <div class="contact-form reveal-right">
-                    <form id="contactForm">
+                    <form id="contactForm" action="mailto:info@kynova.it.com" method="post" enctype="text/plain">
                         <div class="form-group">
                             <label for="contactName">Your Name</label>
-                            <input type="text" id="contactName" placeholder="Jane Smith" required>
+                            <input type="text" id="contactName" name="name" placeholder="Jane Smith" required>
                         </div>
                         <div class="form-group">
                             <label for="contactEmail">Your Email</label>
-                            <input type="email" id="contactEmail" placeholder="jane@example.com" required>
+                            <input type="email" id="contactEmail" name="email" placeholder="jane@example.com" required>
                         </div>
                         <div class="form-group">
                             <label for="contactMessage">Your Message</label>
-                            <textarea id="contactMessage" rows="5" placeholder="Tell us about your interest..." required></textarea>
+                            <textarea id="contactMessage" name="message" rows="5" placeholder="Tell us about your interest..." required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-full">
                             Send Message <i class="fas fa-paper-plane"></i>
@@ -784,7 +784,7 @@
                 </div>
                 <div class="footer-contact">
                     <h4>Contact</h4>
-                    <p><i class="fas fa-envelope"></i> info@kynova-ar.com</p>
+                    <p><i class="fas fa-envelope"></i> info@kynova.it.com</p>
                 </div>
             </div>
             <div class="footer-bottom">

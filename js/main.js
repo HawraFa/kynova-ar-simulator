@@ -148,7 +148,15 @@ if (contactForm) {
             return;
         }
 
-        showToast(`Thank you ${name}! We'll be in touch at ${email} soon.`, 'success');
+        // Create mailto link with form data
+        const subject = `Contact from ${name}`;
+        const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(message)}`;
+        const mailtoLink = `mailto:info@kynova.it.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+        
+        // Open email client
+        window.location.href = mailtoLink;
+        
+        showToast(`Thank you ${name}! Opening your email client...`, 'success');
         contactForm.reset();
     });
 }
