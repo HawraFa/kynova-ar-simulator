@@ -126,10 +126,66 @@ document.querySelectorAll('.stat-card[data-count]').forEach(card => {
 });
 
 /* ================================================================
-   Contact Form - Now handled by FormSubmit
+   Contact Form - AJAX submission to FormSubmit
 ================================================================ */
-// Form validation handled by HTML5 required attributes
-// Submission handled by FormSubmit service
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('contactName').value.trim();
+        const email = document.getElementById('contactEmail').value.trim();
+        const message = document.getElementById('contactMessage').value.trim();
+
+        if (!name || !email || !message) {
+            showToast('Please fill in all fields.', 'error');
+            return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showToast('Please enter a valid email address.', 'error');
+            return;
+        }
+
+        // Show loading state
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+
+        try {
+            // Submit to FormSubmit via AJAX
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('message', message);
+            formData.append('_subject', 'New Contact from KyNova Website');
+            formData.append('_captcha', 'false');
+            formData.append('_template', 'table');
+
+            const response = await fetch('https://formsubmit.co/info@kynova.it.com', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                showToast(`Thank you ${name}! Your message has been sent successfully.`, 'success');
+                contactForm.reset();
+            } else {
+                throw new Error('Failed to send message');
+            }
+        } catch (error) {
+            showToast('Sorry, there was an error sending your message. Please try again.', 'error');
+        } finally {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }
+    });
+}
 
 function showToast(message, type = 'success') {
     const existing = document.querySelector('.toast');
