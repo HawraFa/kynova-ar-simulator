@@ -126,40 +126,10 @@ document.querySelectorAll('.stat-card[data-count]').forEach(card => {
 });
 
 /* ================================================================
-   Contact Form
+   Contact Form - Now handled by FormSubmit
 ================================================================ */
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const name    = document.getElementById('contactName').value.trim();
-        const email   = document.getElementById('contactEmail').value.trim();
-        const message = document.getElementById('contactMessage').value.trim();
-
-        if (!name || !email || !message) {
-            showToast('Please fill in all fields.', 'error');
-            return;
-        }
-
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            showToast('Please enter a valid email address.', 'error');
-            return;
-        }
-
-        // Create mailto link with form data
-        const subject = `Contact from ${name}`;
-        const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(message)}`;
-        const mailtoLink = `mailto:info@kynova.it.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-        
-        // Open email client
-        window.location.href = mailtoLink;
-        
-        showToast(`Thank you ${name}! Opening your email client...`, 'success');
-        contactForm.reset();
-    });
-}
+// Form validation handled by HTML5 required attributes
+// Submission handled by FormSubmit service
 
 function showToast(message, type = 'success') {
     const existing = document.querySelector('.toast');
